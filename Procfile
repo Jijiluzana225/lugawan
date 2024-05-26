@@ -1,0 +1,1 @@
+web: gunicorn lugawan_halin.wsgi --log-file -

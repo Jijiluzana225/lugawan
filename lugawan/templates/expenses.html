@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+</head>
+<body>
+    <h1>This is the expense page.</h1>
+    <form action="{% url 'expensepath' %}" method="post"> 
+    
+    {%csrf_token%}
+
+
+    {{form}}
+    
+   
+    <input type="submit" value="Add Expense">
+    
+    </form>
+</body>
+</html>
+

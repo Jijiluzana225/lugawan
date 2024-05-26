@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <title>Expense Window</title>
+    
+</head>
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: yellow;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  align:center;
+}
+
+.w3-btn {width:150px;}
+
+</style>
+
+
+<body>
+    <div class="container text-center"  >
+    <form  method="post" > 
+        {%csrf_token%}
+        <h1 class="h3 mb-3 font-weight-normal"> Expense Form </h1>
+       {{form.as_p}}
+        <input type="submit" value="Add Expense">
+      
+    </form>
+    </div>
+</body>
+</html>
