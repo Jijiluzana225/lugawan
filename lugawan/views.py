@@ -31,7 +31,7 @@ def index(request):
             item = "Lugaw with Egg"
             price= "35"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Lugaw with Egg - " + str(transdate))
@@ -41,7 +41,7 @@ def index(request):
             item = "Lugaw with Laman"
             price= "55"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Lugaw with Laman - " + str(transdate))
@@ -51,7 +51,7 @@ def index(request):
             item = "Extra Egg"
             price= "15"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Extra Egg - " + str(transdate))
@@ -61,7 +61,7 @@ def index(request):
             item = "Lumpia Toge"
             price= "10"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Lumpia Toge - " + str(transdate))
@@ -72,7 +72,7 @@ def index(request):
             item = "Softdrink"
             price= "15"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Softdrink - " + str(transdate))
@@ -82,7 +82,7 @@ def index(request):
             item = "Canister"
             price= "10"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Canister - " + str(transdate))
@@ -92,7 +92,7 @@ def index(request):
             item = "Sisig with Rice"
             price= "85"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Sisig with Rice - " + str(transdate))
@@ -102,7 +102,7 @@ def index(request):
             item = "Sisig Only"
             price= "75"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Sisig Only - " + str(transdate))
@@ -135,8 +135,6 @@ def index(request):
 
 
 
-    print(plain)
-    print (today)
 
     context = {
         'plain': plain,
@@ -172,7 +170,7 @@ def expense(request):
 
     initial_datax ={
         'branch':"Macabalan",
-        'transdate': datetime.datetime.now(),
+        'transdate': timezone.now(),
         }
     
     form = forms.CreateExpense(initial=initial_datax)    
