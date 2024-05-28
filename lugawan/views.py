@@ -21,7 +21,7 @@ def index(request):
             item = "Plain Lugaw"
             price= "20"
       
-            transdate = datetime.datetime.now()
+            transdate = timezone.now()
             halin1= halin(branch=branch,item=item, price=price, transdate=transdate)
             halin1.save()
             messages.success(request, "Plain Lugaw - " + str(transdate))
