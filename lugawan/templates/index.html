@@ -40,28 +40,6 @@ input[type=button], input[type=submit], input[type=reset] {
     <form action = "{% url 'index' %}" method = "POST">
     {% csrf_token %}
 
-
- <!--  {{form}}
-    <div class="container text-center"  >
-		<div class="btn-group-vertical w-75">
-			<button type="button" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 10px; margin-top:250px; border-radius: 10px; width: 250px; !important ">Plain Lugaw</button>
-			<button type="button" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 10px; border-radius: 10px !important" >Lugaw with EGG</button>
-		</div>
-	</div>
-
-
- 
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="enter your name" required><br>
-    
-    <label for="fname">Fname</label>
-    <input type="text" name="fname" placeholder="enter your Fname" required><br>
-
-    <label for="price">Price</label>
-    <input type="text" name="price" placeholder="enter your price" required><br>
-
-   </form>
- -->
   <div class="container text-center"  >
 		<div class="w3-container" style="margin-top:100px">
             <button class="btn btn-outline-primary" style="width: 250px; height:50px" role="button" aria-pressed="true" name="plain" >Plain Lugaw {{plain}}</button>
@@ -108,6 +86,7 @@ input[type=button], input[type=submit], input[type=reset] {
   {% endfor %}
 
 </table>
+	 </form>
 </div>
  
  
