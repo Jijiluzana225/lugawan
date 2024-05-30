@@ -37,6 +37,31 @@ input[type=button], input[type=submit], input[type=reset] {
         <input type="submit" value="Add Expense">
       
     </form>
+     <a href="{% url 'index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+  </div>
     </div>
+
+    <div class="table container text-center"  style=margin-top:50px >
+ <table class="table-responsive" style="overflow-x:auto;height:400px;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Date and Time</th>        
+      <th scope="col">Item</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  {% for itemview in expenseslist %}
+    <tr>
+    <td>{{itemview.transdate}} </td>
+    <td>{{itemview.expense}} </td>    
+    <td>{{itemview.Qty}} </td>
+    <td>{{itemview.price}} </td>
+    <td>{{itemview.Notes}} </td>
+    </tr>
+  {% endfor %}
+
+</table>
 </body>
 </html>
