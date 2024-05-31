@@ -131,19 +131,7 @@ def index(request):
 
     order_by_item = halin.objects.all().filter(transdate__date=today).order_by('item')
     
-    if totalhalin:
-        totalhalin = totalhalin * 0.9
-    else:
-        totalhalin = 0
-
-    
-    if totalexpense:
-        totalexpense = totalexpense * 0.9
-    else:
-        totalexpense = 0
-
-
-    
+      
     xnet = totalhalin - totalexpense
 
 
