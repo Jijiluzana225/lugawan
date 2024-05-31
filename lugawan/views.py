@@ -133,7 +133,10 @@ def index(request):
     
     print(totalhalin)
     print(totalexpense)
-    #xnet = totalhalin - totalexpense
+    if totalhalin is NONE:
+        totalhalin = 0
+    
+    xnet = totalhalin - totalexpense
 
 
 
@@ -153,7 +156,7 @@ def index(request):
         'sisig':sisig,
         'alldata': data,
         'order_by_item':order_by_item,
-        #'xnet':xnet,
+        'xnet':xnet,
         
 
 
