@@ -135,6 +135,9 @@ def index(request):
     print(totalexpense)
     if totalhalin is None:
         totalhalin = 0
+
+     if totalhalin is None:
+        totalexpense = 0
     
     xnet = totalhalin - totalexpense
 
