@@ -144,12 +144,13 @@ def index(request):
 
 
     
-    net = totalhalin-totalexpense
+    xnet = totalhalin - totalexpense
 
 
 
 
     context = {
+        
         'plain': plain,
         'withegg':withegg,
         'laman': laman,
@@ -163,7 +164,7 @@ def index(request):
         'sisig':sisig,
         'alldata': data,
         'order_by_item':order_by_item,
-        'net':net,
+        'xnet':xnet,
         
 
 
