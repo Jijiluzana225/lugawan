@@ -153,7 +153,7 @@ def index(request):
         'sisig':sisig,
         'alldata': data,
         'order_by_item':order_by_item,
-        'xnet':xnet,
+        #'xnet':xnet,
         
 
 
