@@ -107,12 +107,10 @@ def index(request):
             halin1.save()
             messages.success(request, "Sisig Only - " + str(transdate))
         
-        
     
    
     today = timezone.now().date()
  
-
     plain = halin.objects.filter(item="Plain Lugaw", transdate__date=today).count()
     withegg= halin.objects.filter(item="Lugaw with Egg", transdate__date=today).count()
     laman= halin.objects.filter(item="Lugaw with Laman", transdate__date=today).count()
