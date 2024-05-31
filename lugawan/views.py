@@ -132,7 +132,7 @@ def index(request):
     order_by_item = halin.objects.all().filter(transdate__date=today).order_by('item')
     
       
-    xnet = self.totalhalin - self.totalexpense
+    xnet = totalhalin - totalexpense
 
 
 
