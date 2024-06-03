@@ -193,7 +193,7 @@ def expenseview(request):
             return redirect('/')
         
     today = timezone.now().date()
-    order_by_expenses = expense.objects.all().filter(transdate__date=today).order_by('expense')    
+    order_by_expenses = expense.objects.all().filter(transdate__date=today).order_by('-transdate')    
     totalexpense = list(expense.objects.filter(transdate__date=today).aggregate(Sum('price')).values())[0]
     context = {
         'form': form,
