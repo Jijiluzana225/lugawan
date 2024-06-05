@@ -122,12 +122,16 @@ def index(request):
     sisig= halin.objects.filter(item="Sisig Only", transdate__date=today).count()
 
 
+    overalltotalhalin = list(halin.objects.all().aggregate(Sum('price')).values())[0]
+    overalltotalexpense = list(expense.objects.all().aggregate(Sum('price')).values())[0]
     totalhalin = list(halin.objects.filter(transdate__date=today).aggregate(Sum('price')).values())[0]
     totalexpense = list(expense.objects.filter(transdate__date=today).aggregate(Sum('price')).values())[0]
+
     
     data = halin.objects.all().filter(transdate__date=today).order_by('-transdate')
 
     order_by_item = halin.objects.all().filter(transdate__date=today).order_by('item')
+
     
     print(totalhalin)
     print(totalexpense)
@@ -139,7 +143,13 @@ def index(request):
     
     xnet = totalhalin - totalexpense
 
+    if overalltotalhalin is None:
+        overalltotalhalin = 0
 
+    if overalltotalexpense is None:
+        overalltotalexpense = 0
+    
+    allnet = overalltotalhalin - overalltotalexpense
 
 
     context = {
@@ -158,6 +168,7 @@ def index(request):
         'alldata': data,
         'order_by_item':order_by_item,
         'xnet':xnet,
+        'Allnet':allnet,
         
 
 
